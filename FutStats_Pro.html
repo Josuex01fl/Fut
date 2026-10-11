@@ -555,6 +555,38 @@
                 fetchTodayMatches();
                 fetchAllLeaguesMatches();
             }
+            loadSavedFormData();
+        });
+
+        function saveFormDataToLocal() {
+            const formData = {
+                targetOdds: document.getElementById('targetOdds').value,
+                betType: document.getElementById('betType').value,
+                homeTeam: document.getElementById('homeTeam').value,
+                awayTeam: document.getElementById('awayTeam').value
+            };
+            localStorage.setItem('futstats_form_state', JSON.stringify(formData));
+        }
+
+        function loadSavedFormData() {
+            const saved = localStorage.getItem('futstats_form_state');
+            if (saved) {
+                try {
+                    const data = JSON.parse(saved);
+                    if(data.targetOdds) document.getElementById('targetOdds').value = data.targetOdds;
+                    if(data.betType) document.getElementById('betType').value = data.betType;
+                    if(data.homeTeam) document.getElementById('homeTeam').value = data.homeTeam;
+                    if(data.awayTeam) document.getElementById('awayTeam').value = data.awayTeam;
+                } catch(e) {}
+            }
+        }
+
+        ['targetOdds', 'betType', 'homeTeam', 'awayTeam'].forEach(id => {
+            const el = document.getElementById(id);
+            if(el) {
+                el.addEventListener('input', saveFormDataToLocal);
+                el.addEventListener('change', saveFormDataToLocal);
+            }
         });
 
         window.switchDateTab = function(day) {
@@ -592,6 +624,7 @@
         async function runAutomaticMatchAnalysis(homeTeamName, awayTeamName) {
             document.getElementById('homeTeam').value = homeTeamName;
             document.getElementById('awayTeam').value = awayTeamName;
+            saveFormDataToLocal();
             document.getElementById('matchForm').scrollIntoView({ behavior: 'smooth' });
 
             const loading = document.getElementById('loadingIndicator');
@@ -726,6 +759,7 @@
             
             document.getElementById('targetOdds').value = "3.20";
             document.getElementById('betType').value = "parlay";
+            saveFormDataToLocal();
 
             runQuickParlayAnalysis(matchDescriptions);
         });
@@ -1203,6 +1237,7 @@
 
             const targetOdds = document.getElementById('targetOdds').value.trim();
             const betType = document.getElementById('betType').value;
+            saveFormDataToLocal();
 
             const loading = document.getElementById('loadingIndicator');
             const resultsCard = document.getElementById('resultsCard');
@@ -1304,7 +1339,7 @@
                         away: data.awayTeam || 'Partido',
                         pHome: Math.round(data.probHome || 60),
                         pDraw: Math.round(data.probDraw || 25),
-                        pAway: Math.round(data.probAway || 15),
+                        pAway: Math.max(0, 100 - (Math.round(data.probHome || 60) + Math.round(data.probDraw || 25))),
                         date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
                         timestamp: Date.now(),
                         fullData: data,
