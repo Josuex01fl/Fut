@@ -638,7 +638,7 @@
             document.getElementById('loadingText').innerText = `Analizando ${homeTeamName} vs ${awayTeamName}...`;
 
             try {
-                const systemPrompt = "Eres un analista de datos de fútbol y experto en cuotas. Realiza una búsqueda web para el partido indicado y devuelve un JSON estricto con estadísticas, probabilidades, cuotas estimadas, promedio de tiros de esquina, desglose H2H y los últimos 5 partidos oficiales de LIGA de cada equipo, ordenados estrictamente desde el más reciente hasta el más antiguo.";
+                const systemPrompt = "Eres un analista de datos de fútbol y experto en cuotas. Realiza una búsqueda web para el partido indicado y devuelve un JSON estricto con estadísticas, probabilidades, cuotas estimadas, promedio de tiros de esquina, desglose H2H y los últimos 5 partidos oficiales de LIGA de cada equipo, ordenados estrictamente desde el más reciente (el último partido jugado) hasta el más antiguo (hace 5 partidos).";
                 const userQuery = `Analiza detalladamente el partido entre ${homeTeamName} (Local) y ${awayTeamName} (Visitante), incluyendo tiros de esquina, H2H y los goles en los últimos 5 partidos de liga ordenados de más reciente a más antiguo.`;
 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=`;
