@@ -361,7 +361,7 @@
 
                 <div class="space-y-3">
                     <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
-                        <span>⚔️ Enfrentamientos Directos (H2H) & Últimos 5 Partidos de Liga (Más reciente ➔ Más antiguo)</span>
+                        <span>⚔️ Enfrentamientos Directos (H2H) & Goles Recientes (Últimos 5)</span>
                     </h4>
                     
                     <div id="recentFormContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
@@ -484,7 +484,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'futstats-pro-app';
         const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
@@ -585,8 +585,8 @@
             document.getElementById('loadingText').innerText = `Analizando ${homeTeamName} vs ${awayTeamName}...`;
 
             try {
-                const systemPrompt = "Eres un analista de datos de fútbol y experto en cuotas. Realiza una búsqueda web para el partido indicado y devuelve un JSON estricto con estadísticas, probabilidades, cuotas estimadas, promedio de tiros de esquina, desglose H2H y los últimos 5 partidos de LIGA OFICIAL de cada equipo, ordenados estrictamente desde el más reciente (el último partido jugado) hasta el más antiguo (hace 5 partidos).";
-                const userQuery = `Analiza detalladamente el partido entre ${homeTeamName} (Local) y ${awayTeamName} (Visitante), incluyendo tiros de esquina, H2H y los goles en los últimos 5 partidos de liga ordenados de más reciente a más antiguo.`;
+                const systemPrompt = "Eres un analista de datos de fútbol y experto en cuotas. Realiza una búsqueda web para el partido indicado y devuelve un JSON estricto con estadísticas, probabilidades, cuotas estimadas, promedio de tiros de esquina (corners), desglose H2H y los últimos 5 partidos de liga de cada equipo.";
+                const userQuery = `Analiza detalladamente el partido entre ${homeTeamName} (Local) y ${awayTeamName} (Visitante), incluyendo tiros de esquina, H2H y goles en los últimos 5 partidos de liga de cada uno.`;
 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=`;
                 const payload = {
