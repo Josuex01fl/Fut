@@ -23,9 +23,9 @@
                 </div>
                 <div>
                     <h1 class="text-xl font-extrabold tracking-tight text-white flex items-center gap-2">
-                        FutStats Pro <span id="cloudStatus" class="text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-800 px-2 py-0.5 rounded-full font-mono">Cloud Sincronizado</span>
+                        FutStats Pro
                     </h1>
-                    <p class="text-xs text-slate-400 font-medium">Estadísticas, análisis y predicciones con base de datos en la nube.</p>
+                    <p class="text-xs text-slate-400 font-medium">Estadísticas, análisis y predicciones de partidos en un solo lugar.</p>
                 </div>
             </div>
         </div>
@@ -33,10 +33,8 @@
 
     <main class="max-w-7xl mx-auto px-4 py-8 w-full flex-grow grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        <!-- Panel de Entrada y Análisis Principal (2 columnas) -->
         <div class="lg:col-span-2 space-y-6">
             
-            <!-- BUSCADOR AUTÓNOMO POR CUOTA DESEADA & COMBINADA RÁPIDA -->
             <div class="glass-panel border border-emerald-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden bg-gradient-to-br from-slate-900/90 via-slate-900/80 to-emerald-950/30">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
                 
@@ -85,7 +83,6 @@
                 </form>
             </div>
 
-            <!-- MÓDULO: Calendario de las 5 Grandes Ligas -->
             <div class="glass-panel border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
                 
@@ -109,7 +106,6 @@
                     </div>
                 </div>
 
-                <!-- Selector de Día: Hoy / Mañana -->
                 <div class="flex gap-2 mb-3">
                     <button onclick="switchDateTab('today')" id="tabDayToday" class="flex-1 py-2 px-4 rounded-xl text-xs font-bold bg-blue-600 text-white transition shadow-sm">
                         Hoy
@@ -119,7 +115,6 @@
                     </button>
                 </div>
 
-                <!-- Selector Rápido de Franja Horaria -->
                 <div class="flex gap-1.5 mb-4 overflow-x-auto pb-1">
                     <button onclick="filterTimeSlot('all')" id="timeSlotall" class="flex-1 py-1.5 px-3 rounded-xl text-[11px] font-bold bg-slate-800 text-white border border-slate-700 transition whitespace-nowrap">
                         Todas las horas
@@ -135,7 +130,6 @@
                     </button>
                 </div>
 
-                <!-- Pestañas de las 5 Ligas con contadores exactos -->
                 <div class="flex flex-wrap gap-1.5 bg-slate-900 p-1 rounded-2xl border border-slate-800 mb-4">
                     <button onclick="filterLeague('All')" class="league-tab px-3 py-1.5 rounded-xl text-xs font-bold bg-blue-500 text-slate-950 transition shadow-sm flex items-center gap-1.5" data-league="All">
                         <span>Todas</span>
@@ -178,7 +172,6 @@
                 </div>
             </div>
 
-            <!-- Agenda General de Partidos de Hoy -->
             <div class="glass-panel border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-teal-500/5 rounded-full blur-3xl pointer-events-none"></div>
                 
@@ -214,7 +207,6 @@
                 </div>
             </div>
 
-            <!-- Analizador Manual Tradicional -->
             <div class="glass-panel border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
                 
@@ -253,7 +245,6 @@
                     </button>
                 </form>
 
-                <!-- Indicador de Carga Progresiva -->
                 <div id="loadingIndicator" class="hidden mt-8 py-10 flex flex-col items-center justify-center space-y-4 border border-slate-800/60 rounded-2xl bg-slate-900/40">
                     <div class="relative w-12 h-12">
                         <div class="absolute inset-0 border-4 border-emerald-500/20 rounded-full"></div>
@@ -266,7 +257,6 @@
                 </div>
             </div>
 
-            <!-- RESULTADOS DEL ANÁLISIS -->
             <div id="resultsCard" class="glass-panel border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl hidden space-y-8">
                 
                 <div class="space-y-4 border-b border-slate-800 pb-6">
@@ -298,7 +288,6 @@
                     </div>
                 </div>
 
-                <!-- Probabilidades 1X2 Principal -->
                 <div class="space-y-3">
                     <div class="flex justify-between items-center text-sm font-semibold">
                         <span class="text-emerald-400">Victoria Local</span>
@@ -326,7 +315,6 @@
                     </div>
                 </div>
 
-                <!-- Cuotas Estimadas de Mercado -->
                 <div class="space-y-3">
                     <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Cuotas Estimadas de Mercado (Decimales)</h4>
                     <div class="grid grid-cols-3 gap-3 text-center">
@@ -345,7 +333,6 @@
                     </div>
                 </div>
 
-                <!-- Métricas Avanzadas -->
                 <div class="space-y-3">
                     <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Métricas de Goles, Tiros de Esquina y Mercados Clave</h4>
                     <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 text-center">
@@ -372,28 +359,23 @@
                     </div>
                 </div>
 
-                <!-- Historial de Enfrentamientos Directos (H2H) con Form de Últimos 5 Partidos de Liga -->
                 <div class="space-y-3">
                     <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
-                        <span>⚔️ Enfrentamientos Directos (H2H) & Últimos 5 Partidos de Liga (Más reciente ➔ Más antiguo)</span>
+                        <span>⚔️ Enfrentamientos Directos (H2H) & Goles Recientes (Últimos 5)</span>
                     </h4>
                     
                     <div id="recentFormContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
-                        <!-- Rellenado dinámicamente -->
                     </div>
 
                     <div id="h2hContainer" class="space-y-2">
-                        <!-- Rellenado dinámicamente -->
                     </div>
                 </div>
 
-                <!-- Marcadores Exactos -->
                 <div class="space-y-3">
                     <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Marcadores Exactos Más Probables</h4>
                     <div id="exactScoresContainer" class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs"></div>
                 </div>
 
-                <!-- Apuesta Sugerida por IA -->
                 <div class="bg-gradient-to-r from-emerald-950/50 to-teal-950/50 border border-emerald-800/60 p-4 rounded-2xl flex items-start gap-3">
                     <div class="bg-emerald-500 text-slate-950 p-2 rounded-xl font-bold mt-0.5">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -406,7 +388,6 @@
                     </div>
                 </div>
 
-                <!-- Fuentes de Internet -->
                 <div id="sourcesContainer" class="border-t border-slate-800 pt-4 hidden">
                     <span class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Fuentes Web Indexadas en Vivo:</span>
                     <div id="sourcesList" class="flex flex-wrap gap-2 text-xs"></div>
@@ -422,20 +403,19 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        Historial en la Nube
+                        Historial de Partidos
                     </h2>
                     <button id="clearHistory" class="text-xs text-slate-400 hover:text-red-400 transition font-medium">Limpiar</button>
                 </div>
                 
                 <div id="historyList" class="space-y-3.5 overflow-y-auto max-h-[600px] pr-1 flex-grow">
-                    <p class="text-xs text-slate-500 text-center py-12">Cargando historial de la nube...</p>
+                    <p class="text-xs text-slate-500 text-center py-12">No hay análisis guardados en esta sesión.</p>
                 </div>
             </div>
         </div>
 
     </main>
 
-    <!-- MODAL DE TARJETA RESUMEN LIMPIA -->
     <div id="summaryModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
         <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-emerald-950/40 border border-emerald-500/50 rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl space-y-6 relative overflow-hidden">
             <div class="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -501,41 +481,7 @@
         FutStats Pro &bull; Desarrollado con Inteligencia Artificial &bull; Hora Oficial de Venezuela (VET)
     </footer>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'futstats-pro-app';
-        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
-
-        let app, db, auth, userId = null;
-
-        try {
-            app = initializeApp(firebaseConfig);
-            db = getFirestore(app);
-            auth = getAuth(app);
-            
-            if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                signInWithCustomToken(auth, __initial_auth_token).then(() => {
-                    userId = auth.currentUser?.uid;
-                    initAppDB();
-                }).catch(() => fallbackAnonymousAuth());
-            } else {
-                fallbackAnonymousAuth();
-            }
-        } catch (e) {
-            console.warn("Firebase no inicializado, operando en modo local", e);
-            document.getElementById('cloudStatus').innerText = "Modo Local";
-        }
-
-        function fallbackAnonymousAuth() {
-            signInAnonymously(auth).then(() => {
-                userId = auth.currentUser?.uid;
-                initAppDB();
-            }).catch(err => console.error("Error Auth Anónimo:", err));
-        }
-
+    <script>
         let allTopLeaguesTodayMatches = [];
         let allTopLeaguesTomorrowMatches = [];
         let currentSelectedDay = 'today';
@@ -543,53 +489,13 @@
         let currentActiveTimeSlot = 'all';
         let latestAnalyzedData = null;
 
-        function initAppDB() {
+        document.addEventListener('DOMContentLoaded', () => {
+            renderHistory();
             fetchTodayMatches();
             fetchAllLeaguesMatches();
-            listenToHistory();
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            if (!db) {
-                renderHistoryLocal();
-                fetchTodayMatches();
-                fetchAllLeaguesMatches();
-            }
-            loadSavedFormData();
         });
 
-        function saveFormDataToLocal() {
-            const formData = {
-                targetOdds: document.getElementById('targetOdds').value,
-                betType: document.getElementById('betType').value,
-                homeTeam: document.getElementById('homeTeam').value,
-                awayTeam: document.getElementById('awayTeam').value
-            };
-            localStorage.setItem('futstats_form_state', JSON.stringify(formData));
-        }
-
-        function loadSavedFormData() {
-            const saved = localStorage.getItem('futstats_form_state');
-            if (saved) {
-                try {
-                    const data = JSON.parse(saved);
-                    if(data.targetOdds) document.getElementById('targetOdds').value = data.targetOdds;
-                    if(data.betType) document.getElementById('betType').value = data.betType;
-                    if(data.homeTeam) document.getElementById('homeTeam').value = data.homeTeam;
-                    if(data.awayTeam) document.getElementById('awayTeam').value = data.awayTeam;
-                } catch(e) {}
-            }
-        }
-
-        ['targetOdds', 'betType', 'homeTeam', 'awayTeam'].forEach(id => {
-            const el = document.getElementById(id);
-            if(el) {
-                el.addEventListener('input', saveFormDataToLocal);
-                el.addEventListener('change', saveFormDataToLocal);
-            }
-        });
-
-        window.switchDateTab = function(day) {
+        function switchDateTab(day) {
             currentSelectedDay = day;
             const btnToday = document.getElementById('tabDayToday');
             const btnTomorrow = document.getElementById('tabDayTomorrow');
@@ -604,9 +510,9 @@
 
             updateLeagueCounts();
             applyFilters();
-        };
+        }
 
-        window.filterTimeSlot = function(slot) {
+        function filterTimeSlot(slot) {
             currentActiveTimeSlot = slot;
             ['all', 'morning', 'afternoon', 'night'].forEach(s => {
                 const btn = document.getElementById(`timeSlot${s}`);
@@ -619,12 +525,11 @@
                 }
             });
             applyFilters();
-        };
+        }
 
         async function runAutomaticMatchAnalysis(homeTeamName, awayTeamName) {
             document.getElementById('homeTeam').value = homeTeamName;
             document.getElementById('awayTeam').value = awayTeamName;
-            saveFormDataToLocal();
             document.getElementById('matchForm').scrollIntoView({ behavior: 'smooth' });
 
             const loading = document.getElementById('loadingIndicator');
@@ -638,8 +543,8 @@
             document.getElementById('loadingText').innerText = `Analizando ${homeTeamName} vs ${awayTeamName}...`;
 
             try {
-                const systemPrompt = "Eres un analista de datos de fútbol y experto en cuotas. Realiza una búsqueda web para el partido indicado y devuelve un JSON estricto con estadísticas, probabilidades, cuotas estimadas, promedio de tiros de esquina, desglose H2H y los últimos 5 partidos oficiales de LIGA de cada equipo, ordenados estrictamente desde el más reciente (el último partido jugado) hasta el más antiguo (hace 5 partidos).";
-                const userQuery = `Analiza detalladamente el partido entre ${homeTeamName} (Local) y ${awayTeamName} (Visitante), incluyendo tiros de esquina, H2H y los goles en los últimos 5 partidos de liga ordenados de más reciente a más antiguo.`;
+                const systemPrompt = "Eres un analista de datos de fútbol y experto en cuotas. Realiza una búsqueda web para el partido indicado y devuelve un JSON estricto con estadísticas, probabilidades, cuotas estimadas, promedio de tiros de esquina (corners), desglose H2H y los últimos 5 partidos de liga de cada equipo.";
+                const userQuery = `Analiza detalladamente el partido entre ${homeTeamName} (Local) y ${awayTeamName} (Visitante), incluyendo tiros de esquina, H2H y goles en los últimos 5 partidos de liga de cada uno.`;
 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=`;
                 const payload = {
@@ -721,14 +626,13 @@
 
                     latestAnalyzedData = data;
                     displayResults(data, sources, homeTeamName, awayTeamName, false);
-                    await saveToCloudHistory({
+                    saveToHistory({
                         home: data.homeTeam || homeTeamName,
                         away: data.awayTeam || awayTeamName,
                         pHome: Math.round(data.probHome || 45),
                         pDraw: Math.round(data.probDraw || 25),
-                        pAway: Math.max(0, 100 - (Math.round(data.probHome || 45) + Math.round(data.probDraw || 25))),
+                        pAway: Math.round(data.probAway || 30),
                         date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-                        timestamp: Date.now(),
                         fullData: data,
                         sources: sources
                     });
@@ -759,7 +663,6 @@
             
             document.getElementById('targetOdds').value = "3.20";
             document.getElementById('betType').value = "parlay";
-            saveFormDataToLocal();
 
             runQuickParlayAnalysis(matchDescriptions);
         });
@@ -773,7 +676,7 @@
             document.getElementById('loadingText').innerText = `Armando tu combinada rápida y analizando mercados combinados...`;
 
             try {
-                const systemPrompt = "Eres un tipster profesional experto en apuestas combinadas (parlay). A partir de la lista de partidos provista, construye una apuesta combinada sólida de 2 o 3 selecciones con mercados de valor seguros. Devuelve un objeto JSON estrictamente formateado.";
+                const systemPrompt = "Eres un tipster profesional experto en apuestas combinadas (parlay). A partir de la lista de partidos provista, construye una apuesta combinada sólida de 2 o 3 selecciones con mercados de valor seguros (ej. Doble Oportunidad, Más de 1.5 goles, Gana sin empate). Devuelve un objeto JSON estrictamente formateado.";
                 const userQuery = `Construye una combinada exprés optimizada y profesional basada en estos partidos de hoy: ${matchesText}. Da sugerencias de mercado precisas y cuotas individuales para cada uno en el H2H.`;
 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=`;
@@ -856,14 +759,13 @@
 
                     latestAnalyzedData = data;
                     displayResults(data, sources, "⚡ Combinada Exprés", "Múltiples Partidos", true);
-                    await saveToCloudHistory({
+                    saveToHistory({
                         home: `[Parlay Exprés] Cuota: ${data.oddsHome || '3.20'}`,
                         away: 'Combinada Sorpresa',
                         pHome: Math.round(data.probHome || 70),
                         pDraw: 15,
                         pAway: 15,
                         date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-                        timestamp: Date.now(),
                         fullData: data,
                         sources: sources
                     });
@@ -1211,7 +1113,7 @@
             renderTopLeaguesMatches(finalFiltered);
         }
 
-        window.filterLeague = function(leagueName) {
+        function filterLeague(leagueName) {
             currentActiveLeagueFilter = leagueName;
             document.querySelectorAll('.league-tab').forEach(btn => {
                 if(btn.getAttribute('data-league') === leagueName) {
@@ -1221,7 +1123,7 @@
                 }
             });
             applyFilters();
-        };
+        }
 
         document.getElementById('refreshTopLeagues').addEventListener('click', () => {
             fetchAllLeaguesMatches();
@@ -1237,7 +1139,6 @@
 
             const targetOdds = document.getElementById('targetOdds').value.trim();
             const betType = document.getElementById('betType').value;
-            saveFormDataToLocal();
 
             const loading = document.getElementById('loadingIndicator');
             const resultsCard = document.getElementById('resultsCard');
@@ -1334,14 +1235,13 @@
 
                     latestAnalyzedData = data;
                     displayResults(data, sources, `Cuota Objetivo: ${targetOdds}`, `Selección IA (${betType.toUpperCase()})`, true);
-                    await saveToCloudHistory({
+                    saveToHistory({
                         home: `[Cuota ${targetOdds}] ${data.homeTeam || 'Selección'}`,
                         away: data.awayTeam || 'Partido',
                         pHome: Math.round(data.probHome || 60),
                         pDraw: Math.round(data.probDraw || 25),
-                        pAway: Math.max(0, 100 - (Math.round(data.probHome || 60) + Math.round(data.probDraw || 25))),
+                        pAway: Math.round(data.probAway || 15),
                         date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-                        timestamp: Date.now(),
                         fullData: data,
                         sources: sources
                     });
@@ -1375,7 +1275,7 @@
             const hName = data.homeTeam || fallbackHome;
             const aName = data.awayTeam || fallbackAway;
 
-            document.getElementById('badgeResultType').innerText = isOddsFinder ? '🎯 Selección Óptima por Cuota Objetivo' : 'Predicción Matemática & Web';
+            document.getElementById('badgeResultType').innerText = isOddsFinder ? '⚡ Combinada Exprés Optimizada por IA' : 'Predicción Matemática & Web';
             document.getElementById('resHomeName').innerText = hName;
             document.getElementById('resAwayName').innerText = aName;
             document.getElementById('txtMatchDate').innerText = new Date().toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' });
@@ -1415,13 +1315,12 @@
             recentFormContainer.innerHTML = `
                 <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-slate-800 space-y-2">
                     <div class="flex justify-between items-center text-xs font-bold text-emerald-400">
-                        <span>🏠 ${hName} (Últimos 5 de Liga)</span>
-                        <span class="text-[10px] text-slate-400 font-normal">Más reciente ➔ Más antiguo</span>
+                        <span>🏠 ${hName} (Últimos 5)</span>
+                        <span class="text-[10px] text-slate-400 font-normal">Goles Anotados / Recibidos</span>
                     </div>
-                    <div class="grid grid-cols-5 gap-1">
+                    <div class="flex gap-1.5 items-center">
                         ${hGoals.map((g, idx) => `
-                            <div class="flex flex-col items-center gap-1 bg-slate-950/60 p-2 rounded-xl border border-slate-800/80">
-                                <span class="text-[9px] text-emerald-400 font-mono font-bold">${idx === 0 ? 'Último' : `-${idx}`}</span>
+                            <div class="flex-1 flex flex-col items-center gap-1 bg-slate-950/60 p-1.5 rounded-xl border border-slate-800/80">
                                 <div class="flex items-center justify-center gap-1 w-full">
                                     <span class="w-2 h-2 rounded-full bg-emerald-400" title="Anotados: ${g}"></span>
                                     <span class="w-2 h-2 rounded-full bg-rose-500" title="Recibidos: ${hConceded[idx]}"></span>
@@ -1437,13 +1336,12 @@
 
                 <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-slate-800 space-y-2">
                     <div class="flex justify-between items-center text-xs font-bold text-sky-400">
-                        <span>✈️ ${aName} (Últimos 5 de Liga)</span>
-                        <span class="text-[10px] text-slate-400 font-normal">Más reciente ➔ Más antiguo</span>
+                        <span>✈️ ${aName} (Últimos 5)</span>
+                        <span class="text-[10px] text-slate-400 font-normal">Goles Anotados / Recibidos</span>
                     </div>
-                    <div class="grid grid-cols-5 gap-1">
+                    <div class="flex gap-1.5 items-center">
                         ${aGoals.map((g, idx) => `
-                            <div class="flex flex-col items-center gap-1 bg-slate-950/60 p-2 rounded-xl border border-slate-800/80">
-                                <span class="text-[9px] text-sky-400 font-mono font-bold">${idx === 0 ? 'Último' : `-${idx}`}</span>
+                            <div class="flex-1 flex flex-col items-center gap-1 bg-slate-950/60 p-1.5 rounded-xl border border-slate-800/80">
                                 <div class="flex items-center justify-center gap-1 w-full">
                                     <span class="w-2 h-2 rounded-full bg-sky-400" title="Anotados: ${g}"></span>
                                     <span class="w-2 h-2 rounded-full bg-rose-500" title="Recibidos: ${aConceded[idx]}"></span>
@@ -1504,7 +1402,7 @@
             resultsCard.scrollIntoView({ behavior: 'smooth' });
         }
 
-        window.openSummaryCardModal = function() {
+        function openSummaryCardModal() {
             if (!latestAnalyzedData) return;
             const d = latestAnalyzedData;
             
@@ -1518,16 +1416,16 @@
             document.getElementById('modalAiTip').innerText = d.aiTip || "Considera marcador ajustado.";
 
             document.getElementById('summaryModal').classList.remove('hidden');
-        };
+        }
 
-        window.closeSummaryCardModal = function() {
+        function closeSummaryCardModal() {
             document.getElementById('summaryModal').classList.add('hidden');
-        };
+        }
 
-        window.copyCardText = function() {
+        function copyCardText() {
             if (!latestAnalyzedData) return;
             const d = latestAnalyzedData;
-            const textCard = `⚽ FUTSTATS PRO - TARJETA DE PRONÓSTICO ⚽\n` +
+            const textCard = `⚽ FUTRACK PRO - TARJETA DE PRONÓSTICO ⚽\n` +
                 `📅 Partido: ${d.homeTeam || 'Local'} vs ${d.awayTeam || 'Visitante'}\n` +
                 `📊 Probabilidades: L ${Math.round(d.probHome || 45)}% | E ${Math.round(d.probDraw || 25)}% | V ${Math.max(0, 100 - (Math.round(d.probHome || 45) + Math.round(d.probDraw || 25)))}%\n` +
                 `🎯 Cuotas Estimadas: 1(${d.oddsHome || '-'}) X(${d.oddsDraw || '-'}) 2(${d.oddsAway || '-'})\n` +
@@ -1546,75 +1444,32 @@
                 console.error('Error al copiar', err);
             }
             document.body.removeChild(textArea);
-        };
-
-        async function saveToCloudHistory(record) {
-            if (!db || !userId) {
-                saveToHistoryLocal(record);
-                return;
-            }
-            try {
-                const colRef = collection(db, 'artifacts', appId, 'public', 'data', 'match_history');
-                await addDoc(colRef, record);
-            } catch (e) {
-                console.error("Error guardando en Firestore:", e);
-                saveToHistoryLocal(record);
-            }
         }
 
-        function saveToHistoryLocal(record) {
+        function saveToHistory(record) {
             let history = JSON.parse(localStorage.getItem('match_ai_history_pro_v700') || '[]');
             history.unshift(record);
             if(history.length > 10) history.pop();
             localStorage.setItem('match_ai_history_pro_v700', JSON.stringify(history));
-            renderHistoryLocal();
+            renderHistory();
         }
 
-        function listenToHistory() {
-            if (!db) {
-                renderHistoryLocal();
-                return;
-            }
-            try {
-                const colRef = collection(db, 'artifacts', appId, 'public', 'data', 'match_history');
-                onSnapshot(colRef, (snapshot) => {
-                    let history = [];
-                    snapshot.forEach(docSnap => {
-                        history.push({ id: docSnap.id, ...docSnap.data() });
-                    });
-                    history.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
-                    renderHistoryList(history, true);
-                }, (error) => {
-                    console.error("Error en onSnapshot Firestore:", error);
-                    renderHistoryLocal();
-                });
-            } catch (e) {
-                console.error("Error suscribiendo Firestore:", e);
-                renderHistoryLocal();
-            }
-        }
-
-        function renderHistoryLocal() {
-            let history = JSON.parse(localStorage.getItem('match_ai_history_pro_v700') || '[]');
-            renderHistoryList(history, false);
-        }
-
-        function renderHistoryList(history, isCloud) {
+        function renderHistory() {
             const historyList = document.getElementById('historyList');
-            document.getElementById('cloudStatus').innerText = isCloud ? "Cloud Sincronizado" : "Modo Local";
-
+            let history = JSON.parse(localStorage.getItem('match_ai_history_pro_v700') || '[]');
+            
             if(history.length === 0) {
-                historyList.innerHTML = `<p class="text-xs text-slate-500 text-center py-12">No hay análisis guardados en la nube.</p>`;
+                historyList.innerHTML = `<p class="text-xs text-slate-500 text-center py-12">No hay análisis guardados en esta sesión.</p>`;
                 return;
             }
 
             historyList.innerHTML = '';
-            history.forEach((item) => {
+            history.forEach((item, index) => {
                 const card = document.createElement('div');
-                card.className = "bg-slate-900/90 border border-slate-800 hover:border-emerald-500/60 p-4 rounded-2xl space-y-2 shadow-md cursor-pointer transition group relative";
+                card.className = "bg-slate-900/90 border border-slate-800 hover:border-emerald-500/60 p-4 rounded-2xl space-y-2 shadow-md cursor-pointer transition group";
                 card.innerHTML = `
                     <div class="flex justify-between items-center text-xs">
-                        <span class="font-bold text-white truncate max-w-[150px] group-hover:text-emerald-400 transition">${item.home} vs ${item.away}</span>
+                        <span class="font-bold text-white truncate max-w-[160px] group-hover:text-emerald-400 transition">${item.home} vs ${item.away}</span>
                         <span class="text-slate-500 text-[10px] font-medium">${item.date}</span>
                     </div>
                     <div class="flex justify-between text-[11px] font-black pt-1">
@@ -1636,20 +1491,9 @@
             });
         }
 
-        document.getElementById('clearHistory').addEventListener('click', async () => {
-            if (db && userId) {
-                try {
-                    const colRef = collection(db, 'artifacts', appId, 'public', 'data', 'match_history');
-                    const snapshot = await getDocs(colRef);
-                    for (const docSnap of snapshot.docs) {
-                        await deleteDoc(doc(db, 'artifacts', appId, 'public', 'data', 'match_history', docSnap.id));
-                    }
-                } catch(e) {
-                    console.error("Error al limpiar nube", e);
-                }
-            }
+        document.getElementById('clearHistory').addEventListener('click', () => {
             localStorage.removeItem('match_ai_history_pro_v700');
-            renderHistoryLocal();
+            renderHistory();
         });
 
         function showCustomError(msg) {
